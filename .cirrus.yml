@@ -1,0 +1,30 @@
+env:
+    KT_LINK: "https://github.com/MarvelMathesh/MK-4.9-WIP"
+    KT_BRANCH: "land-test-4"
+    TG_TOKEN: "ENCRYPTED[6c365afb3cbf7f59c490b558865d4226fc654a96891dc945afcd6f3962ec2fe6bf6a7426d3effbaf495b8f32a3488cbd]"
+    TG_CHAT_ID: "ENCRYPTED[3c19d691e5a972c47afeb53e6f923ac291095b5689de6e0023c208f5a514d840bdc86f11a7fee59e2688aa07e2f4daa8]"
+    TZ: "Asia/Kolkata"
+
+task:
+  name: "Kernel-Builder"
+  timeout_in: 480m  
+  container:
+      image: marvelmathesh/docker:rom
+      cpu: 1
+      memory: 16G
+
+  Build-Env-Setup_background_script:
+       - export DEBIAN_FRONTEND=noninteractive
+       - apt update
+       - apt install sudo
+       - DEBIAN_FRONTEND=noninteractive
+       - mkdir -p /tmp/ccache
+       - cd /tmp
+
+  Storage-Checker_background_script:
+      - df -h
+      - lsblk
+      - ls -l -a -h
+
+  Build_script:
+      - bash kernel.sh
