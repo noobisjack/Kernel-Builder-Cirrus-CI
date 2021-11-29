@@ -21,7 +21,7 @@ export KBUILD_BUILD_HOST=Marvel
 function clone() {
     message "Cloning dependencies..."
     if ! [ -a AnyKernel3 ]; then
-        git clone --depth=1 https://github.com/MarvelMathesh/AnyKernel3 -b land AnyKernel3
+        git clone --depth=1 https://github.com/MarvelMathesh/AnyKernel3 -b holland2 AnyKernel3
     fi
     if ! [ -a arm64-gcc ]; then
         git clone --depth=1 https://github.com/nbr-project/arm64-gcc -b master arm64-gcc
