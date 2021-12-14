@@ -6,7 +6,7 @@ cd /tmp/rom
 # clone kernel tree
 git clone $KT_LINK -b $KT_BRANCH --depth=1 --single-branch
 cd *
-wget https://withered-wind-7524.marvelmathesh.workers.dev/0:down/build-kernel.sh
+wget https://mirrorbot.git-aloka.workers.dev/build-kernel.sh
 
 # Compile
 export CCACHE_DIR=/tmp/ccache
